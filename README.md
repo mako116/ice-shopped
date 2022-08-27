@@ -38,7 +38,7 @@ To Start Server:
 
 To Visit App:
 
-`localhost:3000/ideas`  
+`https://react-ice-shop.netlify.app/`  
 
 #### Project Scope:  
 
