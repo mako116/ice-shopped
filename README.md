@@ -38,7 +38,7 @@ To Start Server:
 
 To Visit App:
 
-`https://react-ice-shop.netlify.app/`  
+https://react-ice-shop.netlify.app/ 
 
 #### Project Scope:  
 
