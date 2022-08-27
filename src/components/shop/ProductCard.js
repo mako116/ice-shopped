@@ -58,7 +58,7 @@ const ProductCard = ({ product }) => {
               Add to cart
             </a>
             <Link
-              to={`/product/${product.id}`}
+              to={`/product?id=${product.id}`}
               style={{ width: "100%", display: "block" }}
               className="add-to-cart bg-light text-dark fw-700 pl-lg-5 pr-lg-5 text-uppercase font-xssss float-left border-dark border rounded-lg border-size-md d-block mt-0 p-3 text-center ls-3"
             >

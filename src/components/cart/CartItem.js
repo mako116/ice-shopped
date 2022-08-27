@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { setAlertPopModal } from "../../store/alert/alertSlice";
 import {
   adjustQty,
@@ -7,7 +8,6 @@ import {
 } from "../../store/productSlice/productSlice";
 
 const CartItem = ({ item }) => {
-  let url = "";
   const dispatch = useDispatch();
 
   const [input, setInput] = useState(item.qty);
@@ -63,11 +63,12 @@ const CartItem = ({ item }) => {
           className="w50 rounded-lg"
         />
       </td>
+
       <td className="product-headline text-left wide-column">
         <h4>
-          <a href={url} className="text-grey-900 fw-600">
+          <Link to={`/product?id=${item.id}`} className="text-grey-900 fw-600">
             {item?.title}
-          </a>
+          </Link>
         </h4>
       </td>
       <td className="product-p" style={{ whiteSpace: "nowrap" }}>

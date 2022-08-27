@@ -1,8 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getProducts, getProductByCategory, getCategories } from "./actions";
+import {
+  getProducts,
+  getProductByCategory,
+  getCategories,
+  getSingleProduct,
+} from "./actions";
 
 const initialState = {
   products: null,
+  singleProduct: null,
   carts: [],
   categories: null,
   productDetails: null,
@@ -71,6 +77,22 @@ const productSlice = createSlice({
     },
 
     [getProducts.rejected]: (state) => {
+      state.error = true;
+      state.loading = false;
+    },
+
+    [getSingleProduct.pending]: (state) => {
+      state.loading = true;
+    },
+
+    [getSingleProduct.fulfilled]: (state, { payload }) => {
+      state.singleProduct = payload;
+      state.error = false;
+      console.log(payload);
+      state.loading = false;
+    },
+
+    [getSingleProduct.rejected]: (state) => {
       state.error = true;
       state.loading = false;
     },

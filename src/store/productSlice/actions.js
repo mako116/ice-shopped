@@ -33,3 +33,14 @@ export const getProductByCategory = createAsyncThunk(
     } catch (error) {}
   }
 );
+
+export const getSingleProduct = createAsyncThunk(
+  "products/getSingleProduct",
+  async (id) => {
+    try {
+      const response = await Axios.get(`/products/${id}`);
+
+      return response?.data;
+    } catch (error) {}
+  }
+);

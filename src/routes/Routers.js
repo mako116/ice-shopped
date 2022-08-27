@@ -15,7 +15,7 @@ const Routers = () => {
       <Routes>
         <Route element={<LoggedInLayout />}>
           <Route path="/" exact element={<Home />} />
-          <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/product" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/users" element={<Users />} />
         </Route>
@@ -26,8 +26,6 @@ const Routers = () => {
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>
-
-      {/* <Footer /> */}
     </Router>
   );
 };
